@@ -43,19 +43,75 @@ const Navbar = () => {
         </IconButton>
       </Box>
 
-      <List disablePadding sx={{ display: "flex", flexDirection: "column", gap: 0.5, alignItems: "stretch" }}>
-        {navItems.map((item) => (
-          <ListItemButton key={item.label} component={Link} to={item.to} onClick={closeMenu} sx={{ borderRadius: 2, px: 1.5, py: 1, justifyContent: "flex-start" }}>
-            <ListItemText primary={item.label} primaryTypographyProps={{ fontWeight: 600, color: "#0f172a", textAlign: "left" }} sx={{ textAlign: "left", margin: 0 }} />
-            {item.icon}
-          </ListItemButton>
-        ))}
-        {isLoggedIn && ["admin", "staff"].includes(user?.role || "") && (
-          <ListItemButton component={Link} to="/dashboard" onClick={closeMenu} sx={{ borderRadius: 2, px: 1.5, py: 1, justifyContent: "flex-start" }}>
-            <ListItemText primary="Dashboard" primaryTypographyProps={{ fontWeight: 600, color: "#0f172a", textAlign: "left" }} sx={{ textAlign: "left", margin: 0 }} />
-          </ListItemButton>
-        )}
-      </List>
+      <List
+  disablePadding
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    gap: 0.5,
+    alignItems: "stretch",
+  }}
+>
+  {navItems.map((item) => (
+    <ListItemButton
+      key={item.label}
+      component={Link}
+      to={item.to}
+      onClick={closeMenu}
+      sx={{
+        borderRadius: 2,
+        px: 1.5,
+        py: 1,
+        justifyContent: "flex-start",
+      }}
+    >
+      <ListItemText
+        primary={
+          <Typography
+            sx={{
+              fontWeight: 600,
+              color: "#0f172a",
+              textAlign: "left",
+            }}
+          >
+            {item.label}
+          </Typography>
+        }
+        sx={{ textAlign: "left", margin: 0 }}
+      />
+      {item.icon}
+    </ListItemButton>
+  ))}
+
+  {isLoggedIn && ["admin", "staff"].includes(user?.role || "") && (
+    <ListItemButton
+      component={Link}
+      to="/dashboard"
+      onClick={closeMenu}
+      sx={{
+        borderRadius: 2,
+        px: 1.5,
+        py: 1,
+        justifyContent: "flex-start",
+      }}
+    >
+      <ListItemText
+        primary={
+          <Typography
+            sx={{
+              fontWeight: 600,
+              color: "#0f172a",
+              textAlign: "left",
+            }}
+          >
+            Dashboard
+          </Typography>
+        }
+        sx={{ textAlign: "left", margin: 0 }}
+      />
+    </ListItemButton>
+  )}
+</List>
 
       <Box sx={{ mt: 3, display: "flex", flexDirection: "column", gap: 1.25 }}>
         {isLoggedIn ? (
