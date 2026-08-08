@@ -137,9 +137,12 @@ const Navbar = () => {
       <AppBar position="sticky" elevation={0} sx={{ borderBottom: "1px solid #e5e7eb", backgroundColor: "#0f172a", color: "#f8fafc", backdropFilter: "blur(10px)" }}>
         <Container maxWidth="lg">
           <Toolbar sx={{ display: "flex", justifyContent: "space-between", px: 0, minHeight: { xs: 64, sm: 72 }, gap: 1 }}>
-            <Typography component={Link} to="/" sx={{ textDecoration: "none", color: "#f8fafc", fontWeight: 700, fontSize: { xs: 20, sm: 28 }, lineHeight: 1.2 }}>
-              Jeev's Bliss
-            </Typography>
+            <Box component={Link} to="/" sx={{ display: "flex", alignItems: "center", gap: 1, textDecoration: "none", color: "#f8fafc" }}>
+              <Box component="img" src="/favicon.svg" alt="Jeev's Bliss logo" sx={{ width: 36, height: 36, objectFit: "contain" }} />
+              <Typography sx={{ fontWeight: 700, fontSize: { xs: 20, sm: 28 }, lineHeight: 1.2 }}>
+                Jeev's Bliss
+              </Typography>
+            </Box>
 
             <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 1, alignItems: "center", flexWrap: "wrap" }}>
               <Button component={Link} to="/" sx={{ color: "#f8fafc", fontWeight: 600 }}>

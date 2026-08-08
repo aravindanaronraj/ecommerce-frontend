@@ -12,7 +12,7 @@ import ProductCard from "../components/ProductCard";
 const defaultBanner = {
   title: "Elevated essentials",
   subtitle: "Discover premium home and lifestyle picks curated for modern living.",
-  image: "./assets/banner1.jpg",
+  image: "./assets/banner1.png",
 };
 
 type Banner = typeof defaultBanner & { images?: string[]; slides?: { image: string; title: string; subtitle: string }[] };
@@ -21,17 +21,17 @@ const banners = [
   {
     title: "Elevated essentials",
     subtitle: "Discover premium home and lifestyle picks curated for modern living.",
-    image: "./assets/banner1.jpg",
+    image: "./assets/banner1.png",
   },
   {
     title: "Fresh arrivals every week",
     subtitle: "From comfort-driven furniture to personal favorites, stay ahead of the season.",
-    image: "./assets/banner2.jpg",
+    image: "./assets/banner2.png",
   },
   {
     title: "Shop with confidence",
     subtitle: "Fast delivery, smooth checkout, and a polished experience from start to finish.",
-    image: "./assets/banner3.jpg",
+    image: "./assets/banner3.png",
   },
 ];
 
