@@ -8,11 +8,14 @@ import type { RootState } from "../redux/store";
 import { setProducts } from "../redux/slices/productSlice";
 import api from "../api/axios";
 import ProductCard from "../components/ProductCard";
+import banner1 from "../assert/banner1.png";
+import banner2 from "../assert/banner2.png";
+import banner3 from "../assert/banner3.png";
 
 const defaultBanner = {
   title: "Elevated essentials",
   subtitle: "Discover premium home and lifestyle picks curated for modern living.",
-  image: "./assets/banner1.png",
+  image: banner1,
 };
 
 type Banner = typeof defaultBanner & { images?: string[]; slides?: { image: string; title: string; subtitle: string }[] };
@@ -21,17 +24,17 @@ const banners = [
   {
     title: "Elevated essentials",
     subtitle: "Discover premium home and lifestyle picks curated for modern living.",
-    image: "./assets/banner1.png",
+    image: banner1,
   },
   {
     title: "Fresh arrivals every week",
     subtitle: "From comfort-driven furniture to personal favorites, stay ahead of the season.",
-    image: "./assets/banner2.png",
+    image: banner2,
   },
   {
     title: "Shop with confidence",
     subtitle: "Fast delivery, smooth checkout, and a polished experience from start to finish.",
-    image: "./assets/banner3.png",
+    image: banner3,
   },
 ];
 
