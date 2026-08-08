@@ -12,7 +12,7 @@ import ProductCard from "../components/ProductCard";
 const defaultBanner = {
   title: "Elevated essentials",
   subtitle: "Discover premium home and lifestyle picks curated for modern living.",
-  image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
+  image: "./assets/banner1.jpg",
 };
 
 type Banner = typeof defaultBanner & { images?: string[]; slides?: { image: string; title: string; subtitle: string }[] };
@@ -21,17 +21,17 @@ const banners = [
   {
     title: "Elevated essentials",
     subtitle: "Discover premium home and lifestyle picks curated for modern living.",
-    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
+    image: "./assets/banner1.jpg",
   },
   {
     title: "Fresh arrivals every week",
     subtitle: "From comfort-driven furniture to personal favorites, stay ahead of the season.",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
+    image: "./assets/banner2.jpg",
   },
   {
     title: "Shop with confidence",
     subtitle: "Fast delivery, smooth checkout, and a polished experience from start to finish.",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+    image: "./assets/banner3.jpg",
   },
 ];
 
