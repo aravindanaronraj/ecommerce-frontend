@@ -43,6 +43,8 @@ import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
+const backendBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
 const initialForm = {
   title: "", description: "", price: "", category: "", stock: "", brand: "", color: "", size: "", material: "", featured: false,
 };
@@ -135,7 +137,7 @@ const Dashboard = () => {
     fetchAccounts();
     api.get("/admin/settings").then(({ data }) => {
       setBannerSlides(data.banner?.slides?.length ? [...data.banner.slides, ...emptyBannerSlides].slice(0, 3).map((slide: { title?: string; subtitle?: string }) => ({ title: slide.title || "", subtitle: slide.subtitle || "" })) : [{ title: data.banner?.title || "", subtitle: data.banner?.subtitle || "" }, ...emptyBannerSlides.slice(1)]);
-      setBannerImage(data.banner?.images?.[0] ? `http://localhost:5000${data.banner.images[0]}` : data.banner?.image ? `http://localhost:5000${data.banner.image}` : "");
+      setBannerImage(data.banner?.images?.[0] ? `${backendBaseUrl}${data.banner.images[0]}` : data.banner?.image ? `${backendBaseUrl}${data.banner.image}` : "");
       setAboutContent({ ...defaultAbout, ...data.about });
       setFooterContent({ ...defaultFooter, ...data.footer });
     }).catch(console.log);
