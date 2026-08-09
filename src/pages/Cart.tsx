@@ -20,6 +20,8 @@ import type { RootState } from "../redux/store";
 import { setCart } from "../redux/slices/cartSlice";
 import { getGuestCart, saveGuestCart } from "../utils/guestCart";
 
+const backendBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
 const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -149,7 +151,7 @@ const Cart = () => {
               {cartItems.map((item) => (
                 <Box key={item._id} sx={{ border: "1px solid #e5e7eb", borderRadius: 3, p: { xs: 1.5, sm: 2 }, display: "flex", justifyContent: "space-between", alignItems: { xs: "flex-start", sm: "center" }, flexWrap: "wrap", gap: 2 }}>
                   <Box sx={{ display: "flex", alignItems: "center", gap: 2, width: { xs: "100%", sm: "auto" } }}>
-                    <Box component="img" src={item.product?.image ? `http://localhost:5000${item.product.image}` : "https://via.placeholder.com/150"} alt={item.product?.title || "Product"} sx={{ width: { xs: 72, sm: 90 }, height: { xs: 72, sm: 90 }, objectFit: "cover", borderRadius: 2, flexShrink: 0 }} />
+                    <Box component="img" src={item.product?.image ? `${backendBaseUrl}${item.product.image}` : "https://via.placeholder.com/150"} alt={item.product?.title || "Product"} sx={{ width: { xs: 72, sm: 90 }, height: { xs: 72, sm: 90 }, objectFit: "cover", borderRadius: 2, flexShrink: 0 }} />
                     <Box>
                       <Typography sx={{ fontWeight: 700, fontSize: { xs: "0.95rem", sm: "1rem" } }}>{item.product?.title || "Product"}</Typography>
                       <Typography variant="body2" color="text.secondary">₹{item.product?.price || 0}</Typography>
