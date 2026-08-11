@@ -138,7 +138,7 @@ const Navbar = () => {
         <Container maxWidth="lg">
           <Toolbar sx={{ display: "flex", justifyContent: "space-between", px: 0, minHeight: { xs: 64, sm: 72 }, gap: 1 }}>
             <Box component={Link} to="/" sx={{ display: "flex", alignItems: "center", gap: 1, textDecoration: "none", color: "#f8fafc" }}>
-              <Box component="img" src="/logo.jpeg" alt="Jeev's Bliss logo" sx={{ width: 36, height: 36, objectFit: "contain" }} />
+              <Box component="img" src="/logo.jpeg" alt="Jeev's Bliss logo" sx={{ width: 50, height: 50, objectFit: "contain" ,borderRadius: "50%" }} />
               <Typography sx={{ fontWeight: 700, fontSize: { xs: 20, sm: 28 }, lineHeight: 1.2 }}>
                 Jeev's Bliss
               </Typography>
